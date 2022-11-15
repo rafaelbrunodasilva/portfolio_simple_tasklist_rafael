@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        body {
+            background-color: #e0e5dc;
+            font: 15pt Tahoma;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div.container {
+            margin-top: 50px;
+            min-width: 40%;
+            min-height: 200px;
+            padding: 10px;
+            border: 2px solid lightgrey;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 20px -20px 60px #bec3bb,
+                -20px 20px 60px #fffffd;
+        }
+
+        ul.novoponteiro {
+            cursor: pointer;
+        }
+
+        button.remover {
+            margin-left: 10px;
+        }
+
+        ul li {
+            padding: 5px;
+            display: flex;
+            justify-content: start;
+        }
+
+        ul li.naoRealizada {
+            list-style-type: '☐';
+            cursor: pointer;
+            color: lightcoral;
+            text-indent: 10px;
+        }
+
+        ul li.realizada {
+            list-style-type: '☑';
+            cursor: pointer;
+            text-indent: 10px;
+            color: lightgreen;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Lista de Tarefas</h2>
+        <h5>Adicione tarefas preenchendo o campo a seguir e clicando no botão + abaixo</h5>
+        <h5>Marque como lido ou não lido clicando sobre o item</h5>
+        <h5>Exclua o item clicando no botão x</h5>
+
+        <div>
+            <input type="text" id="caixaDeTexto" placeholder="Tarefa">
+            <button id="botaoAdicionar" class="adicionar">✚</button>
+            <select id="listaSuspensa" hidden>
+                <option>--Seleciona uma opção--</option>
+                <option>Marcar Todas as Tarefas</option>
+                <option>Desmarcar Todas as Tarefas</option>
+                <option>Limpar a Lista de Tarefas</option>
+            </select>
+        </div>
+
+        <ul id="listaTarefas">
+
+        </ul>
+
+    </div>
+
+    <script src="script.js" type="text/javascript"></script>
+
+</body>
+
+</html>
